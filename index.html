@@ -91,6 +91,43 @@
     color: rgba(255,255,255,.8);
   }
 
+  /* Download banner */
+  .download-banner {
+    background: linear-gradient(135deg, var(--accent), var(--brand));
+    color: #fff;
+  }
+  .download-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 24px;
+    flex-wrap: wrap;
+  }
+  .download-text { display: flex; align-items: center; gap: 14px; }
+  .download-icon { font-size: 1.9rem; line-height: 1; }
+  .download-title { margin: 0; font-weight: 700; font-size: 1.12rem; }
+  .download-sub { margin: 2px 0 0; font-size: .95rem; color: rgba(255,255,255,.92); }
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    color: #0b5c5c;
+    font-weight: 700;
+    font-size: 1.02rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(0,0,0,.18);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .download-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.26); }
+  .download-btn .dl { font-size: 1.15em; line-height: 1; }
+
   /* Content */
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
   .intro {
@@ -164,6 +201,20 @@
     border-top: 1px solid var(--line);
     margin-top: 40px;
   }
+  .footer-links {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer-links a:hover { color: var(--brand); text-decoration: underline; }
+  .copyright { margin: 0; }
 
   @media (min-width: 720px) {
     .steps { gap: 30px; }
@@ -190,6 +241,21 @@
 </style>
 </head>
 <body>
+  <div class="download-banner">
+    <div class="download-inner">
+      <div class="download-text">
+        <span class="download-icon" aria-hidden="true">&#128193;</span>
+        <div>
+          <p class="download-title">Workshop materials</p>
+          <p class="download-sub">Download the Excel files you&rsquo;ll need for today&rsquo;s session.</p>
+        </div>
+      </div>
+      <a class="download-btn" href="Cowork-workshop.zip" download>
+        <span class="dl" aria-hidden="true">&#11015;</span> Download workshop files (.zip)
+      </a>
+    </div>
+  </div>
+
   <header class="hero">
     <span class="badge-pill">Free Version &middot; Login Guide</span>
     <h1>Try the Free Version of Copilot</h1>
@@ -308,7 +374,10 @@
   </main>
 
   <footer>
-    &copy; Copyright Microsoft Corporation. All rights reserved.
+    <nav class="footer-links" aria-label="Legal">
+      <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Privacy Statement</a>
+    </nav>
+    <p class="copyright">&copy; Copyright Microsoft Corporation. All rights reserved.</p>
   </footer>
 </body>
 </html>
